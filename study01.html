@@ -7,22 +7,34 @@
 
     <style>
         table{
-            border: 1rem;
+            border: 10px;
+            border-color: blue;
         }
+
+        #id{
+            background-color: brown;
+        }
+        .class{
+            width: 50px; height: 30px;
+        }
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap" rel="stylesheet">
+    
     </style>
 
     </head>
 
 <body>
     
-<h1>1</h1>
-<p>안녕하세요</p>
-<a herf="www.naver.com" target="_blank">네이버</a>
+<h1 style="color:blueviolet;">멋쟁이 사자처럼</h1>
+<p id="id">안녕하세요</p>
+<a herf="https://www.naver.com" target="_blank">네이버</a>
 
 <ol>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
+    <li>hello</li>
+    <li style="font-family: 'BIZ UDPMincho', serif;">hello</li>
+    <li>안녕하세요</li>
 </ol>
 
 <ul>
@@ -31,15 +43,17 @@
     <li>3</li>
 </ul>
 
-<div>
+<div style="margin: 15px; color: bisque;">
     멋쟁이사자처럼
 </div>
 
-<table>
+<div id="id">box</div>
+
+<table style="border-color: black;">
     <thead>
         <tr>
-            <th>제목 열1</th>
-            <th>제목 열2</th>
+            <th>이름</th>
+            <th>성별</th>
         </tr>
     </thead>
     <tbody>
@@ -53,13 +67,14 @@
             <td>표의 마지막 열1</td>
             <td>표의 마지막 열2</td>
         </tr>
+        <tr>
+            <td>표의 마지막 열3</td>
+            <td>표의 마지막 열4</td>
+        </tr>
     </tfoot>
 
 </table>
 
-<form action="input">
-    ID: <input type="text">
-</form>
 
 </body>
 </html>
