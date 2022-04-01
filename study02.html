@@ -7,39 +7,50 @@
     <title>멋쟁이사자처럼02</title>
 <style>
     #logo{
-        background-color: bisque;
+        background-color: rgba(176, 99, 142, 0.913);
         color: white;
         text-align: center;
     }
     #body{
         text-align: center;
+        background-color: rgb(227, 186, 186);
+        font-family: 'Nanum Myeongjo', serif;
     }
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=PT+Sans:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 
 </style>
 
 </head>
 <body>
-    <h1 id="logo", font-family: 'BIZ UDPMincho', serif; font-family: 'PT Sans', sans-serif;>LOGIN</h1>
+    <h1 id="logo" style="font-family: 'BIZ UDMincho', serif;">LOGIN</h1>
     
-    <p></p>
-
     <form id="body">
         <p>
-            <b>아이디</b>
+            <label for="id"><b>아이디</b></label>
             <input type="text" name="name" id="아이디 입력">
         </p>
         <p>
-            <b>비밀번호</b>
+            <label for="password"><b>비밀번호</b></label>
             <input type="password" name="password" id="비밀번호 입력">
         </p>
         <p>
             <b>성별</b>
-            <input type="checkbox" name="gender" id="man">남자
-            <input type="checkbox" name="gender" id="women">여자    
+            <select name="gender" id="">
+                <option value="" selected>--선택--</option>
+                <option value="men">남자</option>
+                <option value="women">여자</option>    
+            </select>
+        </p>
+        <p>
+            <label for=""><b>자기소개</b></label><br>
+            <input type="text", style="height: 300px; width: 400px;">
         </p>
         </form>
 
