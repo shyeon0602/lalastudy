@@ -5,13 +5,13 @@
 > 표준화된 프로토콜 집합을 통해 통신하는 서로 연결된 컴퓨터의 글로벌 네트워크
 
 - 인터넷의 시초</br>
-  인터넷은 ARPANET의 관리자인 Bob Taylor가 주도하여 발명하였다.</br>
-  ARPANET은 군대의 Advanced Research Projects Agency에서 자금을 지원한 학술 연구 네트워크이다.</br>
-  1973년, 소프트웨어 엔지니어 Vint Cerf와 Bob Kahn은 TCP/IP 표준 네트워크를 개발하고 이는 현대 인터넷의 기초가 되었다.</br>
+  인터넷은 *ARPANET*의 관리자인 *Bob Taylor*가 주도하여 발명하였다.</br>
+  *ARPANET*은 군대의 *Advanced Research Projects Agency*에서 자금을 지원한 학술 연구 네트워크이다.</br>
+  1973년, 소프트웨어 엔지니어 *Vint Cerf*와 *Bob Kahn*은 TCP/IP 표준 네트워크를 개발하고 이는 현대 인터넷의 기초가 되었다.</br>
 
 - 인터넷의 운영방법</br>
   인터넷은 분산 네트워크로 구성되어있어 기업, 대학, 정부 및 기타 기관이 자체 네트워크를 운영하고 자발적인 상호 연결 계약을 기반으로 서로 트래픽을 교환한다.</br>
-  인터넷이 작동하도록 하는 공유 기술 표준은 Internet Engineering Task Force 조직에서 관리한다.
+  인터넷이 작동하도록 하는 공유 기술 표준은 *Internet Engineering Task Force* 조직에서 관리한다.
 
 #### IP주소란?
 
