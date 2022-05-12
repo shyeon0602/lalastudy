@@ -16,9 +16,15 @@
         background-color: rgb(207, 168, 203);
         font-family: 'Nanum Myeongjo', serif;
     }
-    #box{
-        text-align: left;
-        margin-right: 330px;
+    #input{
+        background-color: white;
+        width: 200px;
+        height: 15px;
+    }
+    #select{
+        width: 100px;
+        height: 20px;
+        text-align: center;
     }
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,23 +44,23 @@
     <form action="url" method="get" style="text-align: center;">
         <p id="body">
             <label for="id">아이디</label>
-            <input type="text" name="name" id="아이디 입력">
+            <input type="text" name="name" id="input" placeholder="입력하세요">
         </p>
         <p id="body">
             <label for="password">비밀번호</label>
-            <input type="password" name="password" id="비밀번호 입력">
+            <input type="password" name="password" id="input" placeholder="입력하세요">
         </p>
         <p id="body">
             성별
-            <select name="gender" id="">
-                <option value="" selected>--선택--</option>
+            <select name="gender" id="select">
+                <option selected>--선택--</option>
                 <option value="men">남자</option>
                 <option value="women">여자</option>    
             </select>
         </p>
-        <p id="body" style="padding: 10px;">
-            <label for="" id="box">자기소개</label><br>
-            <textarea cols="70" rows="30"></textarea>
+        <p id="body">
+            <label>자기소개</label><br>
+            <textarea cols="50px" rows="15px"></textarea>
         </p>
         <button type="submit" style="margin: 10px; padding: 10px;"><b>전송</b></button>
         </form>
