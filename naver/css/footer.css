@@ -1,0 +1,60 @@
+footer{
+    height: 310px;
+    width: 1080px;
+    margin: auto;
+    padding: 0 8px 0 8px; /*위 오른쪽 아래 왼쪽*/
+    display: flex; /*flex 컨테이너 생성하려면 컨테이너 요소의 display값을 flex 또는 inline-flex로 지정*/
+    flex-direction: column; /*요소 수평 정렬*/
+    font-size: 12px;
+}
+.footer_ad {
+    overflow: hidden;
+    padding: 24px 0;
+    border-bottom: 1px solid #e4e8eb;
+}
+.footer_ad ul>li {
+    display: inline-block;
+    cursor: pointer;
+}
+.notice_box {
+    flex: 1; /*flex: 증가너비 감소너비 기본너비;*/
+    display: flex;
+    justify-content: space-between; /*양끝 정렬*/
+    align-items: center;
+    border-bottom: 1px solid #f1f3f6;
+}
+.aside_box {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f3f6;
+}
+.area_user_row {
+    display: flex;
+}
+.area_user_row span {
+    flex: 1;
+}
+.area_user_row ul {
+    flex: 6;
+}
+.area_user_row ul>li {
+    display: inline-block; /*수평정렬*/
+    margin-left: 8px;
+}
+.area_col {
+    flex: 3;
+    display: flex;
+    margin-left: 100px;
+}
+.area_col .ac_content {
+    line-height: 20px;
+}
+.area_col .ac_img1 {
+    width: 60px;
+    height: 75px;
+}
+.area_col .ac_img2 {
+    width: 60px;
+    height: 60px;
+}
