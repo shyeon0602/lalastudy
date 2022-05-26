@@ -62,3 +62,17 @@ main {
     padding-right: 15px;
 }
 
+.newsstand {
+    display: grid;
+    grid-template-columns: 125px 125px 125px 125px 125px 125px;
+    grid-template-rows: 70px 70px 70px 70px;
+    padding-top: 15px;
+}
+[class *= cell] {
+    box-sizing: border-box;
+    border: 1px solid gray;
+    padding: 10px;
+}
+.side_ad {
+    position: relative;
+}
