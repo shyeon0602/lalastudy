@@ -66,13 +66,47 @@ main {
     display: grid;
     grid-template-columns: 125px 125px 125px 125px 125px 125px;
     grid-template-rows: 70px 70px 70px 70px;
-    padding-top: 15px;
+    padding-top: 6px;
 }
 [class *= cell] {
     box-sizing: border-box;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     padding: 10px;
 }
 .side_ad {
     position: relative;
+}
+.newsstand_box {
+    text-align: left;
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+.news_logo {
+    text-align: center;
+    margin-top: 15px;
+}
+.card_wrap {
+    position: relative;
+    height: 47px;
+    margin: 12px 0;
+    border: 1px solid lightgray;
+}
+/* .card_wrap_title {
+    padding-top: 20px;
+} */
+.theme_head {
+    display: block;
+}
+.theme_head .group_title {
+    flex-direction: row;
+    overflow: hidden;
+    padding-bottom: 17px;
+}
+.theme_head .group_title .title_area {
+    display: flex;
+    float: left;
+}
+.info_area {
+    display: flex;
+    float: right;
 }
