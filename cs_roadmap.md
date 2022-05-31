@@ -7,13 +7,13 @@
   > 전세계 컴퓨터를 하나로 연결하는 컴퓨터 네트워크 시스템입니다.
 
   <div>
-    인터넷은 *ARPANET*의 관리자인 *Bob Taylor*가 주도하여 발명했습니다.
-    *ARPANET*는 군대의 *Advanced Research Projects Agency* 자금을 지원한 학술 연구 네트워크입니다.
+    인터넷은 ARPANET의 관리자인 Bob Taylor가 주도하여 발명했습니다.
+    ARPANET는 군대의 Advanced Research Projects Agency 자금을 지원한 학술 연구 네트워크입니다.
   </div>
   <br>
   <div>
   인터넷은 분산네트워크로 구성되어 있습니다. 기업, 대학, 정부 및 기타 기관이 자체 네트워크를 운영하고 자발적으로 상호 연결 계약을 기반으로 서로 트래픽을 교환합니다.<br>
-  인터넷이 작동하도록 하는 공유 표준 기술은 *Internet Engineering Task Force* 조직에서 관리합니다.
+  인터넷이 작동하도록 하는 공유 표준 기술은 Internet Engineering Task Force 조직에서 관리합니다.
   </div>
 
 <br>
