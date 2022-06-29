@@ -8,7 +8,7 @@
 
   <div>
     인터넷은 ARPANET의 관리자인 Bob Taylor가 주도하여 발명했습니다.
-    ARPANET는 군대의 Advanced Research Projects Agency 자금을 지원한 학술 연구 네트워크입니다.
+    ARPANET은 군대의 Advanced Research Projects Agency 자금을 지원한 학술 연구 네트워크입니다.
   </div>
   <br>
   <div>
