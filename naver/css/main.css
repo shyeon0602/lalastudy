@@ -121,27 +121,32 @@ main {
     font-size: 0;
     line-height: 0;
     white-space: nowrap;
-    list-style-type: disc;
-    margin-block-start: 1em;
+    list-style-type: none;
+    padding: 0;
+    /* margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    padding-inline-start: 40px; */
 }
 .list_category_item {
     position: relative;
     display: inline-block;
     vertical-align: top;
     border: 1px solid lightgray;
+    justify-content: center;
+    /* flex-direction: row; */
 }
-.main_category .category_item_tab{
+.main_category .category_item_tab {
     display: block;
-    border-right: 1px solid #dae1e6;
     font-size: 13px;
     line-height: 49px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 60px;
 }
 .icon_middot {
     width: 2px;
@@ -149,4 +154,68 @@ main {
     display: inline-block;
     margin: 4px 2px;
     background-color: rgba(32,32,32,.8);
+}
+.group_topstory {
+    padding: 18px 0;
+    width: 750px;
+    height: 230px;
+}
+.group_topstory .topstory_inner {
+    float: left;
+    width: 364px;
+    margin: 5px;
+}
+.topstory_view .topstory_thumb {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 364px;
+    height: 180px;
+}
+.title_line_two {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 44px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 3px;
+    white-space: normal;
+    font-size: 13px;
+}
+.theme_link {
+    padding: 5px 18px;
+    margin: 15px;
+    /* margin-top: 240px; */
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+    font-size: 13px;
+    font-weight: 700;
+    width: 680px;
+}
+.link_sports {
+    float: left;
+    color: #0147b5;
+    padding: 15px 0 4px;
+    margin-right: 16px;
+}
+.list_service {
+    overflow: hidden;
+    height: 25px;
+    padding-left: 17px;
+    border-left: 1px solid #e4e8eb;
+    list-style-type: none;
+}
+.service_item {
+    float: left;
+}
+.service {
+    display: inline-block;
+    padding: 3px 0 4px;
+    color: #404040;
+    vertical-align: top;
+}
+.theme_link .service_item+.service_item {
+    margin-left: 28px;
 }
