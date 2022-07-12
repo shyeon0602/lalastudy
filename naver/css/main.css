@@ -87,13 +87,19 @@ main {
 }
 .card_wrap {
     position: relative;
+    display: flex;
     height: 47px;
     margin: 12px 0;
     border: 1px solid lightgray;
 }
-/* .card_wrap_title {
-    padding-top: 20px;
-} */
+.card_wrap img {
+    padding: 5px;
+}
+.card_wrap_title {
+    font-size: 14px;
+    text-align: left;
+    padding-top: 13px;
+}
 .theme_head {
     display: block;
 }
@@ -218,4 +224,105 @@ main {
 }
 .theme_link .service_item+.service_item {
     margin-left: 28px;
+}
+.group_theme {
+    display: block;
+}
+.media_view {
+    /*margin: 0 -27px -31px 0;*/
+    padding: 10px;
+    font-size: 0;
+    line-height: 0;
+    width: 730px;
+}
+.media_area {
+    display: inline-block;
+    width: 232px;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: top; /*inline 또는 table-cell box에서 수직정렬 지정, 텍스트 요소에는 line-height, img 태그에는 vertical-align:top을 주면 같은 요소에서 중간으로 배치*/
+    text-decoration: none;
+}
+.media_thumb {
+    width: 232px;
+    height: 130px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+.media_info {
+    display: block;
+    padding-top: 12px;
+    overflow: hidden;
+}
+.media_view .title {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 40px;
+    line-height: 20px;
+    text-overflow: ellipsis; /*말줄임 표시*/
+    -webkit-line-clamp: 2; /*블록 컨테이너의 콘텐츠를 지정한 줄 수만큼으로 제한, display 속성을 -webkit-box, -webkit-inline-box로 하고 -webkit-box-orient 속성을 vertical로 설정한 경우에만 동작 */
+    -webkit-box-orient: vertical;
+    font-size: 13px;
+}
+.source {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 3px;
+    vertical-align: top;
+    overflow: hidden;
+    color: #505050;
+}
+.shop_wrap {
+    overflow: hidden;
+    width: 330px;
+    /* height: 1809px; */
+    background-color: #fff;
+    letter-spacing: -.25px;
+    /* transform: translateZ(0); */
+}
+.shop_header {
+    padding: 12px 0 13px;
+    line-height: 17px;
+}
+.link_shop {
+    float: left;
+    margin: 10px 0 0 5px;
+    font-size: 13px;
+    line-height: 17px;
+    color: black;
+}
+.shop_tab {
+    float: right;
+    font-size: 13px;
+    font-weight: 700;
+    list-style: none;
+}
+.shop_tab .tab {
+    display: block;
+    padding: 0 4px;
+    border-bottom: 2px solid transparent;
+    color: #202020;
+    text-decoration: none;
+}
+.shop_tab .tab[aria-selected=true] {
+    border-color: #19ce60;
+    color: #03cf5d
+}
+.shop_content {
+    overflow: hidden;
+    /* height: 1763px; */
+    border: 1px solid lightgrey;
+}
+.group_mall {
+    display: block;
+    overflow: hidden;
+    padding: 12px 4px 11px 10px;
+    background-color: #f7f9fa;
+    border-bottom: 1px solid #dae1e6;
+}
+.mall_area {
+    list-style: none;
+    float: left;
 }
