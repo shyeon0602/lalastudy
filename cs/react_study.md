@@ -17,7 +17,9 @@
 
 1.  하나의 요소로 감싸져야 합니다. 즉 반드시 부모 요소 하나로 감싸는 형태여야 합니다.<br>
     이는 Virtual DOM에서 컴포넌트 변화를 감지할 때 효율적으로 비교할 수 있도록 컴포넌트 내부는 하나의 DOM 트리 구조로 이루어져야 하기 때문입니다.<br>
-    여기서 DOM은 문서 객체 모델로, HTML 문서를 파싱(문장 분석 및 문법적 관계 해석)하여 문서의 구성요소들을 객체로 구조화하여 나타내는 것입니다. HTML Elements, Attributes, CSS styles, Events, Methods 등을 제어할 수 있는 표준 인터페이스를 제공합니다.
+    <!-- 여기서 DOM은 문서 객체 모델로, HTML 문서를 파싱(문장 분석 및 문법적 관계 해석)하여 문서의 구성요소들을 객체로 구조화하여 나타내는 것입니다. HTML Elements, Attributes, CSS styles, Events, Methods 등을 제어할 수 있는 표준 인터페이스를 제공합니다. -->
+
+    여기서 DOM은 문서 객체 모델로, 웹페이지를 이루는 태그들을 자바스크립트가 이용할 수 있게끔 브라우저가 트리구조로 만든 객체 모델을 의미합니다.
 
        <!-- ![DOM TREE](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/1200px-DOM-model.svg.png) -->
 
