@@ -10,7 +10,7 @@
 
 > Javascript에 XML을 추가한 문법 확장입니다. HTML 태그를 변수로 할당하고, 호출하고, 리턴할 수 있는 확장 문법이라고 볼 수 있습니다.<br>
 
-##### XML은 EXtensionable Markup Language로, HTML과 같은 마크업 언어입니다.
+##### XML은 EXtensionable Markup Language로, HTML과 같은 마크업 언어입니다. 이는 데이터를 저장하고 전달하는 것을 목적으로 합니다.
 
 <br>
 
@@ -83,4 +83,4 @@
 <br> -->
 
 - 바벨(Babel)<br>
-  :
+  : 자바스크립트 트랜스파일러인 바벨은 TypeScript나 JSX로 작성된 코드를 JS로 변환해주는 역할을 합니다.
