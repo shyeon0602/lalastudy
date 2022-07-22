@@ -10,7 +10,9 @@
 
 > Javascript에 XML을 추가한 문법 확장입니다. HTML 태그를 변수로 할당하고, 호출하고, 리턴할 수 있는 확장 문법이라고 볼 수 있습니다.<br>
 
-      XML은 EXtensionable Markup Language로, HTML과 같은 마크업 언어입니다.
+##### XML은 EXtensionable Markup Language로, HTML과 같은 마크업 언어입니다.
+
+<br>
 
 > 리액트로 프로젝트를 개발할 때 JSX를 사용합니다. 개발자가 JSX를 작성하면 리액트 엔진은 JSX를 기존 자바스크립트로 해석해줍니다.
 
