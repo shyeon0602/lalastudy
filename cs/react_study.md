@@ -98,3 +98,18 @@
 - Props와 State는 리액트에서 구성요소가 데이터를 받거나 처리하고 보내기 위해 사용됩니다. props 혹은 state 값을 입력 받아 DOM 노드를 생성합니다.<br>
   Props는 외부(부모 컴포넌트)에서 상속받는 데이터이고 데이터를 변경할 수 없습니다. 반면 State는 내부(컴포넌트)에서 생성하고 활동하며 데이터를 변경할 수 있습니다.
 - 이름은 항상 대문자로 이루어지며 소문자로 시작하는 컴포넌트는 DOM 태그로 취급합니다.
+
+<br>
+
+- Component의 선언 방식<br>
+  - 클래스형
+  - 함수형(function): 현재 리액트 메뉴얼에서는 함수형과 Hooks를 사용하는 방식을 권고하고 있습니다.
+
+ <p align="center">
+    <img src="https://velog.velcdn.com/images/gene028/post/f2088f6c-7f2f-4238-b89d-bbe86b2dfa17/image.png" alt="component_선언방식" width="500" height="280"/>
+  </p>
+
+<br>
+
+- Props
+  : 컴포넌트 속성 설정 시에 사용하는 요소로, 프로퍼티(properties)입니다. props의 값은 부모 컴포넌트에서 설정해주며 자식 컴포넌트를 수정하여 렌더링합니다.
