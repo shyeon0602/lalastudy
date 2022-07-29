@@ -126,3 +126,10 @@
 
 - useState 작성 방법<br>
   : 함수형 컴포넌트에서 state를 사용하기 위해서는
+
+- component의 분리
+  : component는 재사용 가능한 개별적인 여러 조각으로 나눌 수 있습니다. 이는 export를 통해 컴포넌트를 내보내주면 됩니다. 함수 앞에 exprot를 사용하거나 함수 끝에 export를 입력해주면 됩니다. 불러오는 과정은 내보내기와 동일하나 export 대신 import를 입력합니다.
+
+- map() 함수
+
+- key
