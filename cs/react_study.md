@@ -92,44 +92,78 @@
 ### 컴포넌트(Component)
 
 > 소프트웨어 시스템에서 재사용이 가능한 각각의 독립된 모듈입니다. 이는 앱을 이루는 최소한의 단위입니다.
-
+데이터가 주어졌을 때 이에 맞추어 UI를 만들어주는 기능을 하며, 라이프 사이클 API를 통해 컴포넌트가 화면에서 변화가 있을 때 작업을 수행할 수 있습니다. 
 <br>
 
 - UI는 재사용 가능한 개별적인 여러 조각으로 나누고 각 조각을 개별적으로 나누어 코딩합니다.
 - Props와 State는 리액트에서 구성요소가 데이터를 받거나 처리하고 보내기 위해 사용됩니다. props 혹은 state 값을 입력 받아 DOM 노드를 생성합니다.<br>
+  DOM은 Node의 계층구조로 이루어져 있습니다. Node는 여러가지 DOM 타입들이 상속하는 인터페이스이며 계층적 단위입니다.
   Props는 외부(부모 컴포넌트)에서 상속받는 데이터이고 데이터를 변경할 수 없습니다. 반면 State는 내부(컴포넌트)에서 생성하고 활동하며 데이터를 변경할 수 있습니다.
 - 이름은 항상 대문자로 이루어지며 소문자로 시작하는 컴포넌트는 DOM 태그로 취급합니다.
 
 <br>
 
 - Component의 선언 방식<br>
-  - 클래스형: state를 지니고 있습니다.
-  - 함수형(function): 현재 리액트 메뉴얼에서는 함수형과 Hooks를 사용하는 방식을 권고하고 있습니다.
+  - 클래스형(class): class형 컴포넌트에는 render()라는 메서드가 있어야 합니다. 이 메서드 내부에서는 JSX를 반환해주어야 하며, props를 읽기 위해서 this.props 키워드를 사용해야 합니다. 
+<br>
 
- <p align="center">
+  ```html
+  import React, { Component } from 'react';
+
+  class App extends Component {
+    render() {
+      const name = '리액트';
+      return <div>{name}</div>;
+    }
+  }
+
+  export default App;
+  ```
+
+  - 함수형(function): 현재 리액트 메뉴얼에서는 함수형과 Hooks를 사용하는 방식을 권고하고 있습니다.
+  <br>
+
+  ```html
+  import React from 'react';
+
+  function App() {
+    const name = '리액트';
+    return <div>{name}</div>;
+  }
+
+  export default App;
+  ```
+
+ <!-- <p align="center">
     <img src="https://velog.velcdn.com/images/gene028/post/f2088f6c-7f2f-4238-b89d-bbe86b2dfa17/image.png" alt="component_선언방식" width="500" height="280"/>
-  </p>
+  </p> -->
 
 <br>
 
 - Props<br>
   : 컴포넌트 속성 설정 시에 사용하는 요소로, 프로퍼티(properties)입니다. props의 값은 부모 컴포넌트에서 설정해주며 자식 컴포넌트를 수정하여 렌더링합니다. 컴포넌트의 객체 형태로 전달되며 매개 변수를 통해 조회할 수 있습니다.<br>
-  즉 props는 불변의 데이터이며, 부모로부터 전달되어 변경이 불가능합니다.
+  즉 props는 불변의 데이터이며, 부모로부터 전달되어 변경이 불가능합니다.<br>
+  props는 class형, function형 모두 사용할 수 있습니다. 
 
 <br>
 
 - State<br>
   : 컴포넌트 내부에서 바꿀 수 있는 값으로, 데이터를 내보낼 때가 아닌 해당 컴포넌트 내부에서 데이터를 전달할 때 사용됩니다.<br>
-  props와 달리, 가변 데이터이며 구성 요소에 의해 유지됩니다.<br>
+  props와 달리, 가변 데이터이며 구성 요소에 의해 유지됩니다.
+  stat는 함수 내에 선언된 변수처럼 컴포넌트 안에서 관리가 됩니다. 
+  <br>
+  state 객체를 사용하려면 컴포넌트를 생성할 때 가장 상단에 constructor() 함수를 작성하여 컴포넌트를 초기화 합니다. 이는 컴포넌트 생성자에서 super를 호출하기 전까지 this를 사용할 수 없기 때문입니다. 
+
   함수형 컴포넌트는 useState라는 함수를 통해 사용합니다. useState는 배열의 비구조화 할당이 가능합니다. 따라서 배열 안에 들어있는 값을 쉽게 추출할 수 있습니다.
 
 <br>
 
-- useState 작성 방법<br>
-  : 함수형 컴포넌트에서 state를 사용하기 위해서는
-
 - component의 분리
   : component는 재사용 가능한 개별적인 여러 조각으로 나눌 수 있습니다. 이는 export를 통해 컴포넌트를 내보내주면 됩니다. 함수 앞에 exprot를 사용하거나 함수 끝에 export를 입력해주면 됩니다. 불러오는 과정은 내보내기와 동일하나 export 대신 import를 입력합니다.
+
+- useState<br>
+  : 'use'로 시작하는 useState 훅은 메타(페이스북)이 제공하는 내장된 훅입니다. 이는 배열을 리턴하는 역할을 합니다. 
+  
 
 - map() 함수
 
