@@ -92,8 +92,8 @@
 ### 컴포넌트(Component)
 
 > 소프트웨어 시스템에서 재사용이 가능한 각각의 독립된 모듈입니다. 이는 앱을 이루는 최소한의 단위입니다.
-데이터가 주어졌을 때 이에 맞추어 UI를 만들어주는 기능을 하며, 라이프 사이클 API를 통해 컴포넌트가 화면에서 변화가 있을 때 작업을 수행할 수 있습니다. 
-<br>
+> 데이터가 주어졌을 때 이에 맞추어 UI를 만들어주는 기능을 하며, 라이프 사이클 API를 통해 컴포넌트가 화면에서 변화가 있을 때 작업을 수행할 수 있습니다.
+> <br>
 
 - UI는 재사용 가능한 개별적인 여러 조각으로 나누고 각 조각을 개별적으로 나누어 코딩합니다.
 - Props와 State는 리액트에서 구성요소가 데이터를 받거나 처리하고 보내기 위해 사용됩니다. props 혹은 state 값을 입력 받아 DOM 노드를 생성합니다.<br>
@@ -104,34 +104,22 @@
 <br>
 
 - Component의 선언 방식<br>
-  - 클래스형(class): class형 컴포넌트에는 render()라는 메서드가 있어야 합니다. 이 메서드 내부에서는 JSX를 반환해주어야 하며, props를 읽기 위해서 this.props 키워드를 사용해야 합니다. 
-<br>
+
+  - 클래스형(class): class형 컴포넌트에는 render()라는 메서드가 있어야 합니다. 이 메서드 내부에서는 JSX를 반환해주어야 하며, props를 읽기 위해서 this.props 키워드를 사용해야 합니다.
 
   ```html
-  import React, { Component } from 'react';
-
-  class App extends Component {
-    render() {
-      const name = '리액트';
-      return <div>{name}</div>;
-    }
-  }
-
-  export default App;
+  import React, { Component } from 'react'; class App extends Component {
+  render() { const name = '리액트'; return
+  <div>{name}</div>
+  ; } } export default App;
   ```
 
   - 함수형(function): 현재 리액트 메뉴얼에서는 함수형과 Hooks를 사용하는 방식을 권고하고 있습니다.
-  <br>
 
   ```html
-  import React from 'react';
-
-  function App() {
-    const name = '리액트';
-    return <div>{name}</div>;
-  }
-
-  export default App;
+  import React from 'react'; function App() { const name = '리액트'; return
+  <div>{name}</div>
+  ; } export default App;
   ```
 
  <!-- <p align="center">
@@ -143,28 +131,106 @@
 - Props<br>
   : 컴포넌트 속성 설정 시에 사용하는 요소로, 프로퍼티(properties)입니다. props의 값은 부모 컴포넌트에서 설정해주며 자식 컴포넌트를 수정하여 렌더링합니다. 컴포넌트의 객체 형태로 전달되며 매개 변수를 통해 조회할 수 있습니다.<br>
   즉 props는 불변의 데이터이며, 부모로부터 전달되어 변경이 불가능합니다.<br>
-  props는 class형, function형 모두 사용할 수 있습니다. 
+  props는 class형, function형 모두 사용할 수 있습니다.
 
 <br>
 
 - State<br>
-  : 컴포넌트 내부에서 바꿀 수 있는 값으로, 데이터를 내보낼 때가 아닌 해당 컴포넌트 내부에서 데이터를 전달할 때 사용됩니다.<br>
+  : 컴포넌트가 가질 수 있는 상태입니다.  
+  컴포넌트 내부에서 바꿀 수 있는 값으로, 데이터를 내보낼 때가 아닌 해당 컴포넌트 내부에서 데이터를 전달할 때 사용됩니다.<br>
   props와 달리, 가변 데이터이며 구성 요소에 의해 유지됩니다.
-  stat는 함수 내에 선언된 변수처럼 컴포넌트 안에서 관리가 됩니다. 
+  stat는 함수 내에 선언된 변수처럼 컴포넌트 안에서 관리가 됩니다.
   <br>
-  state 객체를 사용하려면 컴포넌트를 생성할 때 가장 상단에 constructor() 함수를 작성하여 컴포넌트를 초기화 합니다. 이는 컴포넌트 생성자에서 super를 호출하기 전까지 this를 사용할 수 없기 때문입니다. 
+  state 객체를 사용하려면 컴포넌트를 생성할 때 가장 상단에 constructor() 함수를 작성하여 컴포넌트를 초기화 합니다. 이는 컴포넌트 생성자에서 super를 호출하기 전까지 this를 사용할 수 없기 때문입니다.
 
   함수형 컴포넌트는 useState라는 함수를 통해 사용합니다. useState는 배열의 비구조화 할당이 가능합니다. 따라서 배열 안에 들어있는 값을 쉽게 추출할 수 있습니다.
 
 <br>
 
 - component의 분리
-  : component는 재사용 가능한 개별적인 여러 조각으로 나눌 수 있습니다. 이는 export를 통해 컴포넌트를 내보내주면 됩니다. 함수 앞에 exprot를 사용하거나 함수 끝에 export를 입력해주면 됩니다. 불러오는 과정은 내보내기와 동일하나 export 대신 import를 입력합니다.
+  : component는 재사용 가능한 개별적인 여러 조각으로 나눌 수 있습니다.
+  react에서 애플리케이션의 크기가 커질수록 하나의 파일에서 코드를 작성하기엔 어려움이 있습니다. 이를 해결하기 위해서 자바스크립트에서는 모듈(module)을 통해 하나의 파일을 여러개의 파일로 나눌 수 있도록 했습니다. 파일 경로를 직접 접근하여 import하는 방법과 폴더 내부에 index.js 파일을 생성하는 방법이 있습니다.
+
+  - export: 변수, 함수, 클래스 앞에 export 키워드를 붙여 모듈의 기능을 외부에서 사용할 수 있도록 내보내는 기능을 합니다.
+
+  ```html
+  export default Page;
+  ```
+
+  - import: export로 내보낸 모듈을 가져오는 기능을 합니다.
+
+  ```html
+  import {page} from "./Page"
+  ```
+
+  <!-- export를 통해 컴포넌트를 내보내주면 됩니다. 함수 앞에 exprot를 사용하거나 함수 끝에 export를 입력해주면 됩니다. 불러오는 과정은 내보내기와 동일하나 export 대신 import를 입력합니다. -->
+
+<!--
+  배열(array): 연관된 데이터를 모아서 통으로 관리하기 위해서 사용하는 데이터 타입
+  변수가 하나의 데이터를 저장하기 위한 것이라면, 배열은 여러 개의 데이터를 하나의 변수에 저장하기 위한 것이다.
+
+  배열의 생성: []를 사용하여 배열을 만든다. 대괄호 안에 데이터를 콤마로 구분해서 나열하면 배열이 된다.
+-->
 
 - useState<br>
-  : 'use'로 시작하는 useState 훅은 메타(페이스북)이 제공하는 내장된 훅입니다. 이는 배열을 리턴하는 역할을 합니다. 
-  
+  : 'use'로 시작하는 useState 훅은 메타(페이스북)이 제공하는 내장된 훅입니다. 이는 배열을 리턴하는 역할을 합니다.
+
+  1. react에서 useState를 import 받아야 합니다.<br>
+     react Hooks의 useState는 컴포넌트의 state를 간편하게 생성하고 업데이트 시킬 수 있게 해주는 도구를 제공합니다.
+     ```html
+     import {useState} from 'react';
+     ```
+  2. 변수를 선언해줍니다.<br>
+
+     ```html
+     const [state, setState] = useState(초기값);
+     ```
+
+     state 생성과 동시에 가져야 하는 초기값을 useState()의 인자로 넣어주면 state와 setState라는 두가지 요소를 배열 형태로 리턴해줍니다. 여기서 변수명은 꼭 state가 아니어도 됩니다.<br>
+
+  ##### const: 상수(constant)를 의미합니다. const 키워드로 선언하면 변치 않는 값을 갖는 변수를 생성합니다. 또한 const로 선언한 변수는 값을 재할당할 수 없습니다.
+
+  3. state 값을 변경하려면 setState()를 불러서 인자에 변경될 값을 넣어주는 변수 재선언을 해줍니다.
+
+     ```html
+     setState(1);
+     ```
+
+     setState()를 이용해서 state의 값을 변경하면 해당 컴포넌트는 화면에서 다시 렌더링 되어 state가 변경될 때마다 화면이 업데이트 됩니다.
 
 - map() 함수
 
 - key
+- link 컴포넌트
+- navigate 컴포넌트
+
+<br>
+### 리액트 라우터(React Router)
+
+- MPA
+
+- SPA
+
+- 라우팅
+  : 다른 주소에 다른 화면을 보여주는 것을 라우팅이라고 합니다.
+
+- Route 사용법
+
+```html
+<Route path="주소규칙" element="{보여줄_컴포넌트}" />
+```
+
+- useState()
+- useParams()
+- useLocation()
+
+- 페이지 주소 정의
+  - url 파라미터: 특정 아이디, 이름을 사용하여 조회할 때 사용합니다.
+  ```html
+  <link to="/movies/1" />
+  ```
+  - 쿼리스트링: 키워드 검색, 페이지네이션, 옵션을 전달할 때 주로 사용합니다.
+    useState를 통해 search가 가능합니다. 또한 url 파라미터와 달리 ROUTE 컴포넌트를 별도로 설정하지 않아도 됩니다.
+  ```html
+  <link to="/movies/1?detail=true" />
+  ```
