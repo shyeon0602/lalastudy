@@ -172,6 +172,16 @@
   배열의 생성: []를 사용하여 배열을 만든다. 대괄호 안에 데이터를 콤마로 구분해서 나열하면 배열이 된다.
 -->
 
+- map() 함수
+
+- key
+- link 컴포넌트
+- navigate 컴포넌트
+
+<br>
+
+### 리액트 Hooks
+
 - useState<br>
   : 'use'로 시작하는 useState 훅은 메타(페이스북)이 제공하는 내장된 훅입니다. 이는 배열을 리턴하는 역할을 합니다.
 
@@ -198,13 +208,13 @@
 
      setState()를 이용해서 state의 값을 변경하면 해당 컴포넌트는 화면에서 다시 렌더링 되어 state가 변경될 때마다 화면이 업데이트 됩니다.
 
-- map() 함수
-
-- key
-- link 컴포넌트
-- navigate 컴포넌트
+- useEffect()
+  : 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 hook이다.
+- useParams()
+- useLocation()
 
 <br>
+
 ### 리액트 라우터(React Router)
 
 - MPA
@@ -219,10 +229,6 @@
 ```html
 <Route path="주소규칙" element="{보여줄_컴포넌트}" />
 ```
-
-- useState()
-- useParams()
-- useLocation()
 
 - 페이지 주소 정의
   - url 파라미터: 특정 아이디, 이름을 사용하여 조회할 때 사용합니다.
