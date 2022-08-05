@@ -103,9 +103,11 @@
 
 <br>
 
+<!--메서드(method): 클래스의 내부에서 정의된 함수인 멤버 함수(member function)-->
+
 - Component의 선언 방식<br>
 
-  - 클래스형(class): class형 컴포넌트에는 render()라는 메서드가 있어야 합니다. 이 메서드 내부에서는 JSX를 반환해주어야 하며, props를 읽기 위해서 this.props 키워드를 사용해야 합니다.
+  - 클래스형(class): class형 컴포넌트에는 반드시 render()라는 메서드가 있어야 합니다. 이 메서드 내부에서는 JSX를 반환해주어야 하며, props를 읽기 위해서 this.props 키워드를 사용해야 합니다.
 
   ```html
   import React, { Component } from 'react'; class App extends Component {
@@ -153,13 +155,13 @@
 
   - export: 변수, 함수, 클래스 앞에 export 키워드를 붙여 모듈의 기능을 외부에서 사용할 수 있도록 내보내는 기능을 합니다.
 
-  ```html
+  ```h
   export default Page;
   ```
 
   - import: export로 내보낸 모듈을 가져오는 기능을 합니다.
 
-  ```html
+  ```h
   import {page} from "./Page"
   ```
 
@@ -172,31 +174,32 @@
   배열의 생성: []를 사용하여 배열을 만든다. 대괄호 안에 데이터를 콤마로 구분해서 나열하면 배열이 된다.
 -->
 <br>
+
 - 생명주기 메서드(Lifecycle Method)<br>
-    : 컴포넌트(component)의 수명은 페이지에 렌더링 되기 전인 준비과정에서 시작해서 페이지에서 사라질 때 끝납니다. 이는 컴포넌트를 처음으로 렌더링할 때, 컴포넌트를 업데이트하기 전후로 어떤 작업을 처리해야 할 때, 불필요한 업데이트를 방지하기 위해 사용됩니다.
-    라이프사이클 메서드는 class 컴포넌트에서만 사용할 수 있습니다.<br>
-    라이프사이클 메서드는 어떤 작업을 작동하기 전에 실행하는 will 접두사가 붙은 메서드와 어떤 작업을 작동한 후에 실행하는 did 접두사가 붙은 메서드로 총 9가지 종류를 가집니다.
-    <br><br>
-    라이프사이클은 mount / update / unmount 3가지 카테고리로 나눌 수 있습니다. <br>
-    
+  : 컴포넌트(component)의 수명은 페이지에 렌더링 되기 전인 준비과정에서 시작해서 페이지에서 사라질 때 끝납니다. 이는 컴포넌트를 처음으로 렌더링할 때, 컴포넌트를 업데이트하기 전후로 어떤 작업을 처리해야 할 때, 불필요한 업데이트를 방지하기 위해 사용됩니다.
+  라이프사이클 메서드는 class 컴포넌트에서만 사용할 수 있습니다.<br>
+  라이프사이클 메서드는 어떤 작업을 작동하기 전에 실행하는 will 접두사가 붙은 메서드와 어떤 작업을 작동한 후에 실행하는 did 접두사가 붙은 메서드로 총 9가지 종류를 가집니다.
+  <br><br>
+  라이프사이클은 mount / update / unmount 3가지 카테고리로 나눌 수 있습니다. <br>
+
   - mount
     : DOM이 생성되고 웹 브라우저상에 컴포넌트가 나타나는 것입니다.
 
   - update
     : 컴포넌트가 업데이트 되는 것입니다. <br><br>
-      컴포넌트가 업데이트 될 때
-       - props가 바뀔 때
-       - state가 바뀔 때
-       - 부모 컴포넌트가 리렌더링될 때
-       - this.foceUpdate로 강제로 렌더링 트리거할 때
-  <br><br>
+    컴포넌트가 업데이트 될 때
+    - props가 바뀔 때
+    - state가 바뀔 때
+    - 부모 컴포넌트가 리렌더링될 때
+    - this.foceUpdate로 강제로 렌더링 트리거할 때
+      <br><br>
   - unmount
-    : 컴포넌트를 DOM에서 제거하는 것입니다.
-<br>
-<p align="center">
-    <img src="https://cdn.filestackcontent.com/ApNH7030SAG1wAycdj3H" alt="lifecycle_method" width="500" height="280"/>
-</p>
-<br>
+  : 컴포넌트를 DOM에서 제거하는 것입니다.
+  <br>
+  <p align="center">
+      <img src="https://cdn.filestackcontent.com/ApNH7030SAG1wAycdj3H" alt="lifecycle_method" width="500" height="280"/>
+  </p>
+  <br>
 
 - map() 함수
 
@@ -208,17 +211,24 @@
 
 ### 리액트 Hooks
 
+> Hook은 react 16.8 버전에 추가된 공식 라이브러리로, class형 컴포넌트에서만 사용할 수 있었던 state와 lifecycle을 함수형 컴포넌트에서도 사용할 수 있도록 해줍니다.
+> Hook을 이용하여 기존 class 바탕의 코드를 작성할 필요없이 상태 값과 여러 react 기능을 사용할 수 있습니다. 이에 따라 class형 컴포넌트에서만 가능하던 상태관리를 더 쉽게 할 수 있게 되었습니다.
+
+##### 함수형 컴포넌트는 기본적으로 리렌더링 될 때 함수 안에 작성된 모든 코드가 다시 실행됩니다.
+
+##### 한편 class형 컴포넌트들은 method의 개념이기 때문에, 리렌더링 되더라도 rende()를 제외한 나머지 method와 state는 그대로 보존이 되어 있습니다.
+
 - useState<br>
   : 'use'로 시작하는 useState 훅은 메타(페이스북)이 제공하는 내장된 훅입니다. 이는 배열을 리턴하는 역할을 합니다.
 
   1. react에서 useState를 import 받아야 합니다.<br>
      react Hooks의 useState는 컴포넌트의 state를 간편하게 생성하고 업데이트 시킬 수 있게 해주는 도구를 제공합니다.
-     ```html
+     ```h
      import {useState} from 'react';
      ```
   2. 변수를 선언해줍니다.<br>
 
-     ```html
+     ```h
      const [state, setState] = useState(초기값);
      ```
 
@@ -228,7 +238,7 @@
 
   3. state 값을 변경하려면 setState()를 불러서 인자에 변경될 값을 넣어주는 변수 재선언을 해줍니다.
 
-     ```html
+     ```h
      setState(1);
      ```
 
@@ -236,8 +246,19 @@
 
 - useEffect()
   : 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 hook입니다. useEffect는 컴포넌트가 mount/unmount/update 됐을 때 특정 작업을 처리할 수 있습니다. 이는 클래스형 컴포넌트에서 사용할 수 있었던 생명주기 메소드를 함수형 컴포넌트에서도 사용할 수 있게 된 것입니다.<br>
-  ##### cl
 
+  useEffect(function, deps) 형태로 구성되어 있습니다. function은 수행하고자 하는 작업이고, deps는 배열의 형태입니다. 배열 안에는 검사하고자 하는 특정 값 또는 빈 배열이 들어갑니다.<br>
+
+  ```h
+  import React, {useEffect} from 'react';
+   useEffect(() => {
+     console.log('mount될 때 실행');
+   }, []);
+  ```
+
+  이렇게 deps 위치에 빈 배열을 넣으면 컴포넌트가 화면에 처음 렌더링 될 때 한번만 실행합니다.
+
+  #####
 
 - useParams()
 - useLocation()
@@ -259,13 +280,22 @@
 <Route path="주소규칙" element="{보여줄_컴포넌트}" />
 ```
 
+##### 예시)
+
+```html
+<Route
+  path="/post/:postID"
+  element={<ShowPost></ShowPost>}
+></Route>
+```
+
 - 페이지 주소 정의
   - url 파라미터: 특정 아이디, 이름을 사용하여 조회할 때 사용합니다.
   ```html
   <link to="/movies/1" />
   ```
   - 쿼리스트링: 키워드 검색, 페이지네이션, 옵션을 전달할 때 주로 사용합니다.
-    useState를 통해 search가 가능합니다. 또한 url 파라미터와 달리 ROUTE 컴포넌트를 별도로 설정하지 않아도 됩니다.
+    useState를 통해 search가 가능합니다. 또한 url 파라미터와 달리 Route 컴포넌트를 별도로 설정하지 않아도 됩니다.
   ```html
   <link to="/movies/1?detail=true" />
   ```
