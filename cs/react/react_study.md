@@ -206,7 +206,7 @@
   : 컴포넌트를 DOM에서 제거하는 것입니다.
   <br>
   <p align="center">
-      <img src="https://cdn.filestackcontent.com/ApNH7030SAG1wAycdj3H" alt="lifecycle_method" width="500" height="280"/>
+      <img src="https://cdn.filestackcontent.com/ApNH7030SAG1wAycdj3H" alt="lifecycle_method" width="700" height="400"/>
   </p>
   <br>
 
