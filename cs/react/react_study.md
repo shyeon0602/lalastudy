@@ -109,19 +109,28 @@
 
   - 클래스형(class): class형 컴포넌트에는 반드시 render()라는 메서드가 있어야 합니다. 이 메서드 내부에서는 JSX를 반환해주어야 하며, props를 읽기 위해서 this.props 키워드를 사용해야 합니다.
 
-  ```html
-  import React, { Component } from 'react'; class App extends Component {
-  render() { const name = '리액트'; return
-  <div>{name}</div>
-  ; } } export default App;
+  ```jsx
+  import React, { Component } from "react";
+  class App extends Component {
+    render() {
+      const name = "리액트";
+      return;
+      <div>{name}</div>;
+    }
+  }
+  export default App;
   ```
 
   - 함수형(function): 현재 리액트 메뉴얼에서는 함수형과 Hooks를 사용하는 방식을 권고하고 있습니다.
 
-  ```html
-  import React from 'react'; function App() { const name = '리액트'; return
-  <div>{name}</div>
-  ; } export default App;
+  ```jsx
+  import React from "react";
+  function App() {
+    const name = "리액트";
+    return;
+    <div>{name}</div>;
+  }
+  export default App;
   ```
 
  <!-- <p align="center">
@@ -155,14 +164,14 @@
 
   - export: 변수, 함수, 클래스 앞에 export 키워드를 붙여 모듈의 기능을 외부에서 사용할 수 있도록 내보내는 기능을 합니다.
 
-  ```h
+  ```jsx
   export default Page;
   ```
 
   - import: export로 내보낸 모듈을 가져오는 기능을 합니다.
 
-  ```h
-  import {page} from "./Page"
+  ```jsx
+  import { page } from "./Page";
   ```
 
   <!-- export를 통해 컴포넌트를 내보내주면 됩니다. 함수 앞에 exprot를 사용하거나 함수 끝에 export를 입력해주면 됩니다. 불러오는 과정은 내보내기와 동일하나 export 대신 import를 입력합니다. -->
@@ -201,11 +210,43 @@
   </p>
   <br>
 
-- map() 함수
+- map() 함수<br>
+  : 반복되는 컴포넌트를 렌더링하기 위해 자바스크립트 배열의 내장함수인 map()을 사용할 수 있습니다. 파라미터로 전달된 함수를 사용하여 배열 내 각 요소를 원하는 규칙에 따라 변환한 후 새로운 배열을 생성합니다. 즉 for문처럼 반복문 형태로 사용할 수 있습니다. 컴포넌트를 반복하는 것이죠.<br>
 
-- key
-- link 컴포넌트
-- navigate 컴포넌트
+##### 예) 주어진 array의 값을 map을 사용하여 제곱하는 방법
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.map((number) => number * number);
+
+console.log(numbers);
+//[1, 2, 3, 4, 5]
+
+console.log(result);
+//[1, 4, 9, 16, 25]
+```
+
+- map() 문법<br>
+  : 1. arr.map(callbackFunction, [thisArg])<br> 2. arr.map(callbackFunction(currentValue, index, array), thisArg)<br>
+
+  - callbackFunction: 새로운 배열의 요소를 생성하는 함수, 3가지 인수를 갖습니다.
+
+    1. currentValue: 현재 배열(arr) 내의 값들을 의미, 현재 처리하고 있는 요소<br>
+    2. index: 현재 배열 내 값의 인덱스를 의미<br>
+    3. array: 현재 처리하고 있는 원본 배열<br>
+
+  - thisArg(선택항목): callback 함수 내부에서 사용할 this 레퍼런스를 설정합니다.
+
+<!-- - map() 사용하는 방법<br>
+  <!-- : callbackfn을 통해 주어진 3개의 인자(요소값, index, 순회하는 대상 객체)를 사용해 새로운 값을 만드는 함수를 등록합니다. -->
+
+<br>
+
+- key<br>
+  : 요소의 리스트를 만들 때, react가 어떤 아이템이 바뀌었는지, 추가되었는지, 삭제되었는지를 인식하는데 사용됩니다.
+  react 내에서는 모든 컴포넌트가 동일한 이름을 가졌더라도 유일한 존재여야 하기 때문입니다.<br>
+  key는 고유한 값이어야 하기 때문에 배열 요소의 id를 사용하거나 index로 사용합니다.
+  그러나 index는 배열의 순서가 바뀌면 index도 바뀌기 때문에 id를 사용하는 것을 권장합니다.
 
 <br>
 
@@ -223,12 +264,12 @@
 
   1. react에서 useState를 import 받아야 합니다.<br>
      react Hooks의 useState는 컴포넌트의 state를 간편하게 생성하고 업데이트 시킬 수 있게 해주는 도구를 제공합니다.
-     ```h
-     import {useState} from 'react';
+     ```jsx
+     import { useState } from "react";
      ```
   2. 변수를 선언해줍니다.<br>
 
-     ```h
+     ```jsx
      const [state, setState] = useState(초기값);
      ```
 
@@ -238,7 +279,7 @@
 
   3. state 값을 변경하려면 setState()를 불러서 인자에 변경될 값을 넣어주는 변수 재선언을 해줍니다.
 
-     ```h
+     ```jsx
      setState(1);
      ```
 
@@ -249,53 +290,129 @@
 
   useEffect(function, deps) 형태로 구성되어 있습니다. function은 수행하고자 하는 작업이고, deps는 배열의 형태입니다. 배열 안에는 검사하고자 하는 특정 값 또는 빈 배열이 들어갑니다.<br>
 
-  ```h
-  import React, {useEffect} from 'react';
-   useEffect(() => {
-     console.log('mount될 때 실행');
-   }, []);
+  ```jsx
+  import React, { useEffect } from "react";
+  useEffect(() => {
+    console.log("mount될 때 실행");
+  }, []);
   ```
 
   이렇게 deps 위치에 빈 배열을 넣으면 컴포넌트가 화면에 처음 렌더링 될 때 한번만 실행합니다.
 
-  #####
+- useNavigate() <br>
+  : 페이지 이동을 할 수 있도록 하는 hook입니다. useNavigate 훅을 실행하면 페이지 이동을 할 수 있게 해주는 함수를 반환합니다. 반환하는 함수를 navigate라는 변수에 저장 후 navigate의 인자로 설정한 path 값을 넘겨주면 해당 경로로 이동할 수 있습니다.
 
-- useParams()
-- useLocation()
+  ```jsx
+  import { useNavigate } from "react-router-dom";
+
+  function Login() {
+    const navigate = useNavigate();
+
+    const goToMain = () => {
+      navigate("/main"); // 메인페이지로 이동할 수 있도록 함
+    };
+
+    return (
+      <div>
+        <!-- 로그인 버튼을 누르면 메인페이지로 이동 -->
+        <button onClick={goToMain}>로그인</button>
+      </div>
+    );
+  }
+  ```
+
+  <br>
+
+- useParams() <br>
+  : 라우터 사용 시 파라미터 정보를 가져와 활용할 때 사용하는 hook입니다.
+
+  ```jsx
+  import { useParams } from "react-router-dom";
+
+  const test = () => {
+    let { params } = useParmas();
+
+    return (
+      <div>
+        <p>현재 페이지의 파라미터는 {params} 입니다.</p>
+      </div>
+    );
+  };
+  ```
+
+- useLocation() <br>
+  : 사용자가 현재 머물러있는 페이지에 대한 정보를 알려주는 hook입니다. 객체 형식으로 보여주기 때문에 location.state로 접근할 수 있습니다.
+
+  ```jsx
+  import { useLocation } from "react-router-dom";
+
+  function Order() {
+    const location = useLocation();
+
+    const { result } = location.state;
+  }
+  ```
+
+  <!-- hooks 추가 공부 필요 -->
 
 <br>
 
 ### 리액트 라우터(React Router)
 
-- MPA
+라우터를 사용하기 위해서 라이브러리를 설치합니다.
 
-- SPA
+```
+npm install react-router-dom
+```
+
+<!-- - MPA
+
+- SPA -->
 
 - 라우팅
   : 다른 주소에 다른 화면을 보여주는 것을 라우팅이라고 합니다.
 
+##### 라우터와 라우팅은 다릅니다. 라우터는 라우트를 이동시키는 컨트롤 도구입니다. 여기서 라우트는 각각의 화면이나 url입니다. 즉 라우트는 요소이고, 라우터는 도구입니다.
+
 - Route 사용법
 
-```html
+```jsx
 <Route path="주소규칙" element="{보여줄_컴포넌트}" />
 ```
 
 ##### 예시)
 
-```html
-<Route
-  path="/post/:postID"
-  element={<ShowPost></ShowPost>}
-></Route>
+```jsx
+<Route path="/post/:postID" element={<ShowPost></ShowPost>}></Route>
 ```
 
 - 페이지 주소 정의
   - url 파라미터: 특정 아이디, 이름을 사용하여 조회할 때 사용합니다.
-  ```html
-  <link to="/movies/1" />
+  ```jsx
+  <Link to="/movies/1" />
   ```
   - 쿼리스트링: 키워드 검색, 페이지네이션, 옵션을 전달할 때 주로 사용합니다.
     useState를 통해 search가 가능합니다. 또한 url 파라미터와 달리 Route 컴포넌트를 별도로 설정하지 않아도 됩니다.
-  ```html
-  <link to="/movies/1?detail=true" />
+  ```jsx
+  <Link to="/movies/1?detail=true" />
   ```
+  <br>
+- Link 컴포넌트 <br>
+  : Link는 a 태그처럼 링크를 연결해줍니다.(url과는 다른 path 개념) <br>
+  리액트 라우터에서 페이지를 이동할 때는 Link 컴포넌트를 사용하면 이동하고자 하는 경로(url)로 이동할 수 있습니다.
+
+  ```jsx
+  <Link to="/movie">movie</Link>
+  ```
+
+##### Link의 경로와 route의 path 경로는 동일해야 합니다.
+
+##### Link 컴포넌트를 사용하면 브라우저의 주소만 바꾸며 페이지를 새로 불러오진 않습니다.
+
+<br>
+
+- NavLink 컴포넌트 <br>
+  : 특정 링크에 스타일을 넣을 수 있습니다. activeStyle과 activeClassName 속성을 사용하여 react 웹의 현재 url과 to의 링크가 일치할 때 activeStyle과 activeClassName이 활성화되고, 일치하지 않으면 비활성화가 됩니다.
+
+<!-- - navigate 컴포넌트 <br>
+  : 특정 행동을 했을 때 해당 주소로 이동해줄 수 있도록 만들어줍니다. -->
